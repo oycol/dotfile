@@ -15,12 +15,16 @@
 
 - link:
     # Linux
-    # ~/.profile: profile
+    ~/.profile: profile
+
+    # Ipython
+    ~/.ipython/profile_default/ipython_config.py : ipython/ipython_config.py  
     
     # Tmux
     ~/.tmux.conf: 
         path: tmux/tmux.conf
-    /etc/bash_completion.d/tmux.sh: tmux/completion
+    /etc/bash_completion.d/tmux.sh:
+        path: tmux/completion
     
     # Zsh
 
