@@ -1,0 +1,33 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~']
+
+- shell:
+    - 
+      command: if [ ! -d ~/.tmux/plugins/tpm ];then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;fi
+      description: Installing tpm ...
+    -       
+      command: ~/.tmux/plugins/tpm/bin/install_plugins
+      description: Installing Tmux Plugin...
+
+- link:
+    # Linux
+    # ~/.profile: profile
+    
+    # Tmux
+    ~/.tmux.conf: 
+        path: tmux/tmux.conf
+    /etc/bash_completion.d/tmux.sh: tmux/completion
+    
+    # Zsh
+
+    # Neovim
+
+    #- shell:
+        #   -  [chsh -s $(which zsh), Making zsh the default shell]
+- shell:
+    - 
+      command: tmux source-file ~/.tmux.conf
