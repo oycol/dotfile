@@ -5,17 +5,9 @@
 
 - clean: ['~']
 
-- shell:
-    - 
-      command: if [ ! -d ~/.tmux/plugins/tpm ];then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;fi
-      description: Installing tpm ...
-    -       
-      command: ~/.tmux/plugins/tpm/bin/install_plugins
-      description: Installing Tmux Plugin...
-
 - link:
     # Linux
-    ~/.profile: profile
+    /etc/profile.d/oycol.sh: oycol.sh
 
     # Ipython
     ~/.ipython/profile_default/ipython_config.py : ipython/ipython_config.py  
@@ -30,8 +22,18 @@
 
     # Neovim
 
-    #- shell:
-        #   -  [chsh -s $(which zsh), Making zsh the default shell]
+
 - shell:
+    # Tmux Init
+    - 
+      command: if [ ! -d ~/.tmux/plugins/tpm ];then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;fi
+      description: Installing tpm ...
+      quiet: true
+    -       
+      command: ~/.tmux/plugins/tpm/bin/install_plugins
+      description: Installing Tmux Plugin...
+      quiet: true
     - 
       command: tmux source-file ~/.tmux.conf
+      description: Reload tmux config...
+      quiet: true
