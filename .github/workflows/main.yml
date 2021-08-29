@@ -23,7 +23,7 @@ jobs:
         with:
           name: dotfile.tar.gz
           path: |
-            ../
-            !../.git
+            /home/runner/work/dotfile/
+            /home/runner/work/dotfile/*/.git
             $HOME/.tmux
             !$HOME/.tmux/**/.git
