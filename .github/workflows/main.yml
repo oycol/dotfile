@@ -18,10 +18,10 @@ jobs:
         run: sudo ./install
       - name: test tar
         run: |
-          sudo ls -al  $HOME
+          sudo ls -al  /root
           
       - name: Package
-        run: sudo tar cf /home/runner/work/dotfile.tar.gz  ${{ github.GITHUB_WORKSPACE }}/dotfile  $HOME/.tmux
+        run: sudo tar cf /home/runner/work/dotfile.tar.gz  ${{ github.workspace }}/dotfile  /root/.tmux
         
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
