@@ -21,9 +21,9 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: dotfile.tar.gz
+          name: dotfile
           path: |
-            /home/runner/work/dotfile/
-            /home/runner/work/dotfile/*/.git
-            $HOME/.tmux
-            !$HOME/.tmux/**/.git
+            "/home/runner/work/dotfile/"
+            "!/home/runner/work/dotfile/*/.git"
+            "$HOME/.tmux"
+            "!$HOME/.tmux/**/.git"
