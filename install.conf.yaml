@@ -28,8 +28,8 @@
     - 
       command: if [ ! -d ~/.tmux/plugins/tpm ];then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;fi
       description: Installing tpm ...
-      quiet: true
+      #quiet: true
     -       
       command: ~/.tmux/plugins/tpm/bin/install_plugins
       description: Installing Tmux Plugin...
-      quiet: true
+      #quiet: true

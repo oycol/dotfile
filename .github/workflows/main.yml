@@ -20,7 +20,7 @@ jobs:
         run: |
           ls ~ -al
           ls ../dotfile -al
-          ls ~/.tmux -al
+          ls -al
           
       - name: Package
         run: tar cf ~/dotfile.tar.gz  ../dotfile  ~/.tmux
