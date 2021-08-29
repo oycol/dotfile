@@ -22,8 +22,8 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: dotfile
-          path: |
-            "/home/runner/work/dotfile/"
-            "!/home/runner/work/dotfile/*/.git"
-            "$HOME/.tmux"
-            "!$HOME/.tmux/**/.git"
+          paths: |
+            /home/runner/work/dotfile/
+            !/home/runner/work/dotfile/*/.git
+            $HOME/.tmux"
+            !$HOME/.tmux/**/.git
