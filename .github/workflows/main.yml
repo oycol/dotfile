@@ -7,17 +7,17 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  
+  package:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - run: |
           sudo apt install tmux 
       - name: Get latest plugin
         run: ./install
-        if: ${{ always() }}
-
+        continue-on-error: true
+  
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
