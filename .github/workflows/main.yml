@@ -17,7 +17,9 @@ jobs:
       - name: Get latest plugin
         run: ./install
         continue-on-error: true
-  
+      - run: ls -al $HOME
+      - run: ls -al $HOME/.tmux
+      - run: sudo ls -al /root
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
