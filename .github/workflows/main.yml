@@ -23,8 +23,8 @@ jobs:
         with:
           name: dotfile
           path: |
-            $HOME/.tmux"
-            !$HOME/.tmux/**/.git
+            root/.tmux"
+            !root/.tmux/**/.git
             /home/runner/work/dotfile/
             !/home/runner/work/dotfile/*/.git
 
