@@ -19,9 +19,11 @@ jobs:
         continue-on-error: true
   
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v2
         with:
           name: dotfile.tar.gz
           path: |
-            ${{ github.workspace }}
+            ../
+            !../.git
             $HOME/.tmux
+            !$HOME/.tmux/**/.git
