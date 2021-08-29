@@ -21,7 +21,7 @@ jobs:
           sudo ls -al  /root
           
       - name: Package
-        run: sudo tar cf /home/runner/work/dotfile.tar.gz  ${{ github.workspace }}/dotfile  /root/.tmux
+        run: sudo tar cf /home/runner/work/dotfile.tar.gz  ${{ github.workspace }}  /root/.tmux
         
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
