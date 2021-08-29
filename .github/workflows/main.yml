@@ -18,15 +18,13 @@ jobs:
         run: sudo ./install
       - name: test tar
         run: |
-          ls ~ -al
-          ls ../dotfile -al
-          ls -al
+          ls $HOME
           
       - name: Package
-        run: tar cf ~/dotfile.tar.gz  ../dotfile  ~/.tmux
+        run: tar cf $HOME/dotfile.tar.gz  ../dotfile  $HOME/.tmux
         
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
           name: dotfile.tar.gz
-          path: ~/dotfile.tar.gz
+          path: $HOME/dotfile.tar.gz
