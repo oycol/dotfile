@@ -28,5 +28,5 @@ jobs:
           name: dotfile
           path: |
              dist/
-             !dist/**/*.git
+             !dist/.tmux/**/*.git
 
