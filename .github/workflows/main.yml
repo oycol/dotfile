@@ -18,15 +18,10 @@ jobs:
         run: ./install
         continue-on-error: true
       - run: |
-          mkdir /home/runner/work/dotfile/dist
-          cp -rf /home/runner/work/dotfile/dotfile /home/runner/work/dotfile/dist
-          cp -rf $HOME/.tmux /home/runner/work/dotfile/dist
-          cp -rf /home/runner/work/dotfile/dist .
+          cp -rf $HOME/.tmux .
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
           name: dotfile
           path: |
-             dist/
-             !dist/.tmux/**/*.git
-
+             /home/runner/work/dotfile/dotfile
