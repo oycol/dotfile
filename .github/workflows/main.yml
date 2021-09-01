@@ -17,16 +17,16 @@ jobs:
       - name: Get latest plugin
         run: ./install
         continue-on-error: true
-      - run: ls -al $HOME
-      - run: ls -al $HOME/.tmux
-      - run: sudo ls -al /root
+      - run: |
+          mkdir {{ $github.workspace }}/dist
+          cp  {{ $github.workspace }} {{ $github.workspace }}/dist
+          cp  $HOME/.tmux {{ $github.workspace }}/dist
+          cp  {{ $github.workspace }}/dist .
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
           name: dotfile
           path: |
-            $HOME/.tmux
-            !$HOME/.tmux/**/.git
-            /home/runner/work/dotfile/
-            !/home/runner/work/dotfile/*/.git
+             dist/
+             !dist/**/*.git
 
