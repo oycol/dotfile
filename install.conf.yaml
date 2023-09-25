@@ -10,10 +10,10 @@
     /etc/profile.d/oycol.sh: oycol.sh
 
     # Ipython
-    ~/.ipython/profile_default/ipython_config.py: ipython/ipython_config.py  
+    $HOME/.ipython/profile_default/ipython_config.py : ipython/ipython_config.py  
     
     # Tmux
-    ~/.tmux.conf: 
+    $HOME/.tmux.conf: 
         path: tmux/tmux.conf
     /etc/bash_completion.d/tmux.sh:
         path: tmux/completion
@@ -26,14 +26,10 @@
 - shell:
     # Tmux Init
     - 
-      command: if [ ! -d ~/.tmux/plugins/tpm ];then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;fi
+      command: if [ ! -d $HOME/.tmux/plugins/tpm ];then git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm;fi
       description: Installing tpm ...
       quiet: true
     -       
-      command: ~/.tmux/plugins/tpm/bin/install_plugins
+      command: $HOME/.tmux/plugins/tpm/bin/install_plugins
       description: Installing Tmux Plugin...
-      quiet: true
-    - 
-      command: tmux source-file ~/.tmux.conf
-      description: Reload tmux config...
       quiet: true

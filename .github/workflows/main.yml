@@ -1,0 +1,27 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          sudo apt install tmux 
+      - name: Get latest plugin
+        run: ./install
+        continue-on-error: true
+      - run: |
+          cp -rf $HOME/.tmux .
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dotfile
+          path: |
+             /home/runner/work/dotfile/dotfile
