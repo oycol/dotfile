@@ -10,7 +10,7 @@
     /etc/profile.d/oycol.sh: oycol.sh
 
     # Ipython
-    ~/.ipython/profile_default/ipython_config.py : ipython/ipython_config.py  
+    ~/.ipython/profile_default/ipython_config.py: ipython/ipython_config.py  
     
     # Tmux
     ~/.tmux.conf: 
